@@ -37,6 +37,10 @@ namespace notas
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            if(obCRUD.ConsultaConResultado("SELECT COUNT(*) FROM asignatura WHERE clave='" + txtclave.Text + "'")==null)
+            {
+                MessageBox.Show("NO existe");
+            }
 
             if (obCRUD.ConsultaSinResultado("INSERT INTO asignatura (clave, nombre_asignatura,ht,hp,cr,idcuatrimestre) VALUES('" + txtclave.Text + "', '" + txtasig.Text + "','" + txtht.Text + "', '" + txthp.Text + "','" + txtcr.Text + "', '" + ComboxCuatrimestre.SelectedValue + "') ")
  )
@@ -47,7 +51,7 @@ namespace notas
                 if (obCRUD.ConsultaSinResultado("INSERT INTO prerequisito(clave,idasignatura) VALUES('" + txtprereq.Text + "','" + idasignatura + "')"))
                 {
                     MessageBox.Show("Datos de Seccion Guardados Correctamente", "Datos Guardados ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    limpiar();
                 }
                 else
                 {
@@ -60,11 +64,9 @@ namespace notas
         private void button4_Click(object sender, EventArgs e)
         {
             
-            DataTable dt =  obCRUD.ConsultaConResultado("SELECT clave, nombre_asignatura, ht,hp,cr FROM asignatura;");
+            DataTable dt =  obCRUD.ConsultaConResultado("SELECT clave, nombre_asignatura,ht,hp,cr FROM asignatura ;");
             dtgdatos.DataSource = dt;
             dtgdatos.Refresh();
-
-
 
         }
 
@@ -112,6 +114,17 @@ namespace notas
             txtcr.Text = dtgdatos.CurrentRow.Cells[4].Value.ToString();
             //txtcuatrimestre.Text = dtgdatos.CurrentRow.Cells[5].Value.ToString();
             
+        }
+        public void  limpiar()
+        {
+            txtclave.Text = "";
+            txtasig.Text = "";
+            txtcr.Text = "";
+            txthp.Text = "";
+            txtht.Text = "";
+            txtprereq.Text = "";
+            txtprereq2.Text = "";
+      
         }
     }
 }
