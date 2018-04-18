@@ -37,12 +37,13 @@ namespace notas
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            if(obCRUD.ConsultaConResultado("SELECT COUNT(*) FROM asignatura WHERE clave='" + txtclave.Text + "'")==null)
+            DataTable dt1= obCRUD.ConsultaConResultado("SELECT * FROM asignatura WHERE clave='" + txtclave.Text + "'");
+            if (dt1.Rows.Count!=0)
             {
-                MessageBox.Show("NO el campo existe");
+                MessageBox.Show(" Esta Asignatura Existe  ", "Error al Guardar ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
-            if (obCRUD.ConsultaSinResultado("INSERT INTO asignatura (clave, nombre_asignatura,ht,hp,cr,idcuatrimestre) VALUES('" + txtclave.Text + "', '" + txtasig.Text + "','" + txtht.Text + "', '" + txthp.Text + "','" + txtcr.Text + "', '" + ComboxCuatrimestre.SelectedValue + "') ")
+            else if (obCRUD.ConsultaSinResultado("INSERT INTO asignatura (clave, nombre_asignatura,ht,hp,cr,idcuatrimestre) VALUES('" + txtclave.Text + "', '" + txtasig.Text + "','" + txtht.Text + "', '" + txthp.Text + "','" + txtcr.Text + "', '" + ComboxCuatrimestre.SelectedValue + "') ")
  )
             {
                 DataTable dt = obCRUD.ConsultaConResultado("SELECT TOP(1)  * FROM asignatura ORDER BY idasignatura DESC;");
