@@ -37,26 +37,34 @@ namespace notas
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            DataTable dt1= obCRUD.ConsultaConResultado("SELECT * FROM asignatura WHERE clave='" + txtclave.Text + "'");
-            if (dt1.Rows.Count!=0)
+            if (string.IsNullOrWhiteSpace(txtclave.Text) && string.IsNullOrWhiteSpace(txtasig.Text) && string.IsNullOrWhiteSpace(txtht.Text) && string.IsNullOrWhiteSpace(txthp.Text) && string.IsNullOrWhiteSpace(txtcr.Text))
             {
-                MessageBox.Show(" La Asignatura Existe  ", "Error al Guardar ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No dejar en blanco los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
-            else if (obCRUD.ConsultaSinResultado("INSERT INTO asignatura (clave, nombre_asignatura,ht,hp,cr,idcuatrimestre) VALUES('" + txtclave.Text + "', '" + txtasig.Text + "','" + txtht.Text + "', '" + txthp.Text + "','" + txtcr.Text + "', '" + ComboxCuatrimestre.SelectedValue + "') ")
- )
+            else
             {
-                DataTable dt = obCRUD.ConsultaConResultado("SELECT TOP(1)  * FROM asignatura ORDER BY idasignatura DESC;");
-                String idasignatura = dt.Rows[0][0].ToString();
-
-                if (obCRUD.ConsultaSinResultado("INSERT INTO prerequisito(clave,idasignatura) VALUES('" + txtprereq.Text + "','" + idasignatura + "')"))
+                DataTable dt1 = obCRUD.ConsultaConResultado("SELECT * FROM asignatura WHERE clave='" + txtclave.Text + "'");//crear una datatable para guardar el resultado de la consulta para despues validar
+                if (dt1.Rows.Count != 0)//condicion para validar si la asignatura ya existe en la base de dato
                 {
-                    MessageBox.Show("Datos de Seccion Guardados Correctamente", "Datos Guardados ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    limpiar();
+                    MessageBox.Show(" La Asignatura Existe  ", "Error al Guardar ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                else
+
+                else if (obCRUD.ConsultaSinResultado("INSERT INTO asignatura (clave, nombre_asignatura,ht,hp,cr,idcuatrimestre) VALUES('" + txtclave.Text + "', '" + txtasig.Text + "','" + txtht.Text + "', '" + txthp.Text + "','" + txtcr.Text + "', '" + ComboxCuatrimestre.SelectedValue + "') ")
+     )
                 {
-                    MessageBox.Show(" No se Pudieron Guardar Datos de Seccion  ", "Error al Guardar ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    DataTable dt = obCRUD.ConsultaConResultado("SELECT TOP(1)  * FROM asignatura ORDER BY idasignatura DESC;");
+                    String idasignatura = dt.Rows[0][0].ToString();
+
+                    if (obCRUD.ConsultaSinResultado("INSERT INTO prerequisito(clave,idasignatura) VALUES('" + txtprereq.Text + "','" + idasignatura + "')"))
+                    {
+                        MessageBox.Show("Datos de Seccion Guardados Correctamente", "Datos Guardados ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show(" No se Pudieron Guardar Datos de Seccion  ", "Error al Guardar ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
 
                 }
 
