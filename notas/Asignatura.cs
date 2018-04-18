@@ -40,7 +40,7 @@ namespace notas
             DataTable dt1= obCRUD.ConsultaConResultado("SELECT * FROM asignatura WHERE clave='" + txtclave.Text + "'");
             if (dt1.Rows.Count!=0)
             {
-                MessageBox.Show(" Esta Asignatura Existe  ", "Error al Guardar ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(" La Asignatura Existe  ", "Error al Guardar ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             else if (obCRUD.ConsultaSinResultado("INSERT INTO asignatura (clave, nombre_asignatura,ht,hp,cr,idcuatrimestre) VALUES('" + txtclave.Text + "', '" + txtasig.Text + "','" + txtht.Text + "', '" + txthp.Text + "','" + txtcr.Text + "', '" + ComboxCuatrimestre.SelectedValue + "') ")
