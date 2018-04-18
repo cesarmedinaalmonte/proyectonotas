@@ -37,6 +37,7 @@ namespace notas
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            //El siguiente if es para verificar si los campos de la asignaturas estan vacios
             if (string.IsNullOrWhiteSpace(txtclave.Text) && string.IsNullOrWhiteSpace(txtasig.Text) && string.IsNullOrWhiteSpace(txtht.Text) && string.IsNullOrWhiteSpace(txthp.Text) && string.IsNullOrWhiteSpace(txtcr.Text))
             {
                 MessageBox.Show("No dejar en blanco los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
