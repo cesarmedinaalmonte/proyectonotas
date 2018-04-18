@@ -39,7 +39,7 @@ namespace notas
         {
             if(obCRUD.ConsultaConResultado("SELECT COUNT(*) FROM asignatura WHERE clave='" + txtclave.Text + "'")==null)
             {
-                MessageBox.Show("NO existe");
+                MessageBox.Show("NO el campo existe");
             }
 
             if (obCRUD.ConsultaSinResultado("INSERT INTO asignatura (clave, nombre_asignatura,ht,hp,cr,idcuatrimestre) VALUES('" + txtclave.Text + "', '" + txtasig.Text + "','" + txtht.Text + "', '" + txthp.Text + "','" + txtcr.Text + "', '" + ComboxCuatrimestre.SelectedValue + "') ")
