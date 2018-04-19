@@ -54,5 +54,14 @@ namespace notas
         {
             
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form formp = new historial();
+            formp.Show();
+
+            formp.Visible = true;
+            Visible = false;
+        }
     }
 }

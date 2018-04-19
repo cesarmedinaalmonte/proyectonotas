@@ -24,3 +24,16 @@ C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.csproj.GenerateResource
 C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.csproj.CoreCompileInputs.cache
 C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.exe
 C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.pdb
+C:\Users\gregory\Documents\GitHub\proyectonotas\notas\obj\Debug\notas.csprojResolveAssemblyReference.cache
+C:\Users\gregory\Documents\GitHub\proyectonotas\notas\obj\Debug\notas.Asignatura.resources
+C:\Users\gregory\Documents\GitHub\proyectonotas\notas\obj\Debug\notas.inicio.resources
+C:\Users\gregory\Documents\GitHub\proyectonotas\notas\obj\Debug\notas.profesor.resources
+C:\Users\gregory\Documents\GitHub\proyectonotas\notas\obj\Debug\notas.Properties.Resources.resources
+C:\Users\gregory\Documents\GitHub\proyectonotas\notas\obj\Debug\notas.csproj.GenerateResource.cache
+C:\Users\gregory\Documents\GitHub\proyectonotas\notas\obj\Debug\notas.csproj.CoreCompileInputs.cache
+C:\Users\gregory\Documents\GitHub\proyectonotas\notas\obj\Debug\notas.exe
+C:\Users\gregory\Documents\GitHub\proyectonotas\notas\obj\Debug\notas.pdb
+C:\Users\gregory\Documents\GitHub\proyectonotas\notas\bin\Debug\notas.exe.config
+C:\Users\gregory\Documents\GitHub\proyectonotas\notas\bin\Debug\notas.exe
+C:\Users\gregory\Documents\GitHub\proyectonotas\notas\bin\Debug\notas.pdb
+C:\Users\gregory\Documents\GitHub\proyectonotas\notas\obj\Debug\notas.historial.resources
