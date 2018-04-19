@@ -25,6 +25,7 @@ namespace notas
 
         private void Asignatura_Load(object sender, EventArgs e)
         {
+            //Codigo para llegar el combobox con la tabla cuatrimestre
             ComboxCuatrimestre.DataSource = obCRUD.ConsultaConResultado("SELECT * FROM cuatrimestre");
             ComboxCuatrimestre.DisplayMember = "nombrecuatrimestre";
             ComboxCuatrimestre.ValueMember = "idcuatrimestre";
@@ -37,30 +38,44 @@ namespace notas
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 18584b9cc6aa4d5c36099eb4dbfeb7757ed822b5
             //El siguiente if es para verificar si los campos de la asignaturas estan vacios
-            if (string.IsNullOrWhiteSpace(txtclave.Text) && string.IsNullOrWhiteSpace(txtasig.Text) && string.IsNullOrWhiteSpace(txtht.Text) && string.IsNullOrWhiteSpace(txthp.Text) && string.IsNullOrWhiteSpace(txtcr.Text))
+            if (string.IsNullOrWhiteSpace(txtclave.Text) || string.IsNullOrWhiteSpace(txtasig.Text) || string.IsNullOrWhiteSpace(txtht.Text) || string.IsNullOrWhiteSpace(txthp.Text) || string.IsNullOrWhiteSpace(txtcr.Text) || string.IsNullOrWhiteSpace(txtprereq.Text))
             {
                 MessageBox.Show("No dejar en blanco los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
+<<<<<<< HEAD
 
+=======
+>>>>>>> 18584b9cc6aa4d5c36099eb4dbfeb7757ed822b5
             {
                 DataTable dt1 = obCRUD.ConsultaConResultado("SELECT * FROM asignatura WHERE clave='" + txtclave.Text + "'");//crear una datatable para guardar el resultado de la consulta para despues validar
-                if (dt1.Rows.Count != 0)//condicion para validar si la asignatura ya existe en la base de dato
+                if (dt1.Rows.Count != 0)//condicion para validar si la asignatura ya existe en la base de datos mostrar el siguiente mensaje
                 {
                     MessageBox.Show(" La Asignatura Existe  ", "Error al Guardar ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-
-                else if (obCRUD.ConsultaSinResultado("INSERT INTO asignatura (clave, nombre_asignatura,ht,hp,cr,idcuatrimestre) VALUES('" + txtclave.Text + "', '" + txtasig.Text + "','" + txtht.Text + "', '" + txthp.Text + "','" + txtcr.Text + "', '" + ComboxCuatrimestre.SelectedValue + "') ")
-     )
+                // La siguiente condicion es para guardar la asignatura en la base de datos
+                else if (obCRUD.ConsultaSinResultado("INSERT INTO asignatura (clave, nombre_asignatura,ht,hp,cr,idcuatrimestre) VALUES('" + txtclave.Text + "', '" + txtasig.Text + "','" + txtht.Text + "', '" + txthp.Text + "','" + txtcr.Text + "', '" + ComboxCuatrimestre.SelectedValue + "') "))
                 {
                     DataTable dt = obCRUD.ConsultaConResultado("SELECT TOP(1)  * FROM asignatura ORDER BY idasignatura DESC;");
                     String idasignatura = dt.Rows[0][0].ToString();
-
+                    
+                    //Condicion que verificar si el primer campo de prerequisito está vacio
+                  
+                    // Esta condicion es la que guarda el primer requisito de la asignatura
                     if (obCRUD.ConsultaSinResultado("INSERT INTO prerequisito(clave,idasignatura) VALUES('" + txtprereq.Text + "','" + idasignatura + "')"))
                     {
+                        //Este if verifica si el campo prerequisito2 está vacio o tiene espacio en blanco 
+                        if (!string.IsNullOrWhiteSpace(txtprereq2.Text))
+                        {
+                            obCRUD.ConsultaSinResultado("INSERT INTO prerequisito(clave,idasignatura) VALUES('" + txtprereq2.Text + "','" + idasignatura + "')");
+
+                        }
                         MessageBox.Show("Datos de Seccion Guardados Correctamente", "Datos Guardados ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         limpiar();
                     }
@@ -69,11 +84,13 @@ namespace notas
                         MessageBox.Show(" No se Pudieron Guardar Datos de Seccion  ", "Error al Guardar ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     }
+                   
 
                 }
-
             }
+            
         }
+        
         private void button4_Click(object sender, EventArgs e)
         {
             
@@ -118,6 +135,7 @@ namespace notas
 
         private void dtgdatos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //DataTable dt = obCRUD.ConsultaConResultado("SELECT * FORM prerequisito WHERE idasignatura = '"+ +"'");
             poc =dtgdatos.CurrentRow.Index;
 
             txtclave.Text = dtgdatos.CurrentRow.Cells[0].Value.ToString();
@@ -138,6 +156,21 @@ namespace notas
             txtprereq.Text = "";
             txtprereq2.Text = "";
       
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            if (obCRUD.ConsultaSinResultado("DELETE FROM asignatura WHERE clave ='"+txtclave.Text+"'"))
+            {
+                MessageBox.Show("Asignatura eliminada", "Eliminada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                limpiar();
+            }
+
+            else
+                    {
+                        MessageBox.Show(" No se pudo eliminar la asignatura  ", "Error al eliminar ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
         }
     }
 }
