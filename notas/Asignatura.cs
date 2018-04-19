@@ -39,7 +39,7 @@ namespace notas
         private void btnguardar_Click(object sender, EventArgs e)
         {
             //El siguiente if es para verificar si los campos de la asignaturas estan vacios
-            if (string.IsNullOrWhiteSpace(txtclave.Text) && string.IsNullOrWhiteSpace(txtasig.Text) && string.IsNullOrWhiteSpace(txtht.Text) && string.IsNullOrWhiteSpace(txthp.Text) && string.IsNullOrWhiteSpace(txtcr.Text))
+            if (string.IsNullOrWhiteSpace(txtclave.Text) || string.IsNullOrWhiteSpace(txtasig.Text) || string.IsNullOrWhiteSpace(txtht.Text) || string.IsNullOrWhiteSpace(txthp.Text) || string.IsNullOrWhiteSpace(txtcr.Text) || string.IsNullOrWhiteSpace(txtprereq.Text))
             {
                 MessageBox.Show("No dejar en blanco los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -57,13 +57,9 @@ namespace notas
                     String idasignatura = dt.Rows[0][0].ToString();
                     
                     //Condicion que verificar si el primer campo de prerequisito está vacio
-                    if (string.IsNullOrWhiteSpace(txtprereq.Text))
-                    {
-                        MessageBox.Show("Campo Obligatorio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                    }
+                  
                     // Esta condicion es la que guarda el primer requisito de la asignatura
-                    else if (obCRUD.ConsultaSinResultado("INSERT INTO prerequisito(clave,idasignatura) VALUES('" + txtprereq.Text + "','" + idasignatura + "')"))
+                    if (obCRUD.ConsultaSinResultado("INSERT INTO prerequisito(clave,idasignatura) VALUES('" + txtprereq.Text + "','" + idasignatura + "')"))
                     {
                         //Este if verifica si el campo prerequisito2 está vacio o tiene espacio en blanco 
                         if (!string.IsNullOrWhiteSpace(txtprereq2.Text))
@@ -155,7 +151,7 @@ namespace notas
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            if (obCRUD.ConsultaSinResultado("DELETE FROM asignatura WHERE clave '"+txtclave+"'"))
+            if (obCRUD.ConsultaSinResultado("DELETE FROM asignatura WHERE clave ='"+txtclave.Text+"'"))
             {
                 MessageBox.Show("Asignatura eliminada", "Eliminada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 limpiar();
