@@ -2,9 +2,9 @@
 notas/CRUD.cs
 notas\.vs\notas\v15\Server\sqlite3\storage.ide
 notas\.vs\notas\v15\Server\sqlite3\storage.ide-shm
-<<<<<<< HEAD
-.vs/notas/v15/Server/sqlite3/storage.ide
-=======
 .vs/notas/v15/.suo
-.vs/notas/v15/.suo
->>>>>>> c221cde43ff42d49912a3d0c3f50eca7805210a7
+
+notas/bin/Debug/notas.exe
+notas/bin/Debug/notas.pdb
+notas/obj/Debug/notas.exe
+notas/obj/Debug/notas.pdb
