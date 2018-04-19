@@ -155,7 +155,17 @@ namespace notas
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
+            if (obCRUD.ConsultaSinResultado("DELETE FROM asignatura WHERE clave '"+txtclave+"'"))
+            {
+                MessageBox.Show("Asignatura eliminada", "Eliminada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                limpiar();
+            }
 
+            else
+                    {
+                        MessageBox.Show(" No se pudo eliminar la asignatura  ", "Error al eliminar ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
         }
     }
 }
