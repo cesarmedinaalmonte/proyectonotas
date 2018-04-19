@@ -32,41 +32,40 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtbuscar = new System.Windows.Forms.TextBox();
+            this.btnbuscarp = new System.Windows.Forms.Button();
             this.dtgdatosp = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnguardarp = new System.Windows.Forms.Button();
+            this.btnlimpial = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtnombrep = new System.Windows.Forms.TextBox();
             this.txtemailp = new System.Windows.Forms.TextBox();
             this.txttelp = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.logo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnguardarp = new System.Windows.Forms.Button();
-            this.btnlimpial = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.logo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnbuscarp = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.btnatras = new System.Windows.Forms.Button();
-            this.btndel = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgdatosp)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.logo.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -83,7 +82,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btndel);
             this.groupBox2.Controls.Add(this.txtbuscar);
             this.groupBox2.Controls.Add(this.btnbuscarp);
             this.groupBox2.Controls.Add(this.dtgdatosp);
@@ -102,6 +100,21 @@
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(250, 25);
             this.txtbuscar.TabIndex = 8;
+            // 
+            // btnbuscarp
+            // 
+            this.btnbuscarp.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnbuscarp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnbuscarp.Image = ((System.Drawing.Image)(resources.GetObject("btnbuscarp.Image")));
+            this.btnbuscarp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnbuscarp.Location = new System.Drawing.Point(6, 38);
+            this.btnbuscarp.Name = "btnbuscarp";
+            this.btnbuscarp.Size = new System.Drawing.Size(61, 36);
+            this.btnbuscarp.TabIndex = 1;
+            this.btnbuscarp.Text = "Buscar";
+            this.btnbuscarp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnbuscarp.UseVisualStyleBackColor = false;
+            this.btnbuscarp.Click += new System.EventHandler(this.btnbuscarp_Click);
             // 
             // dtgdatosp
             // 
@@ -147,6 +160,26 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre:";
             // 
+            // btnguardarp
+            // 
+            this.btnguardarp.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnguardarp.Image = ((System.Drawing.Image)(resources.GetObject("btnguardarp.Image")));
+            this.btnguardarp.Location = new System.Drawing.Point(55, 267);
+            this.btnguardarp.Name = "btnguardarp";
+            this.btnguardarp.Size = new System.Drawing.Size(42, 43);
+            this.btnguardarp.TabIndex = 15;
+            this.btnguardarp.UseVisualStyleBackColor = false;
+            this.btnguardarp.Click += new System.EventHandler(this.btnguardarp_Click);
+            // 
+            // btnlimpial
+            // 
+            this.btnlimpial.Image = ((System.Drawing.Image)(resources.GetObject("btnlimpial.Image")));
+            this.btnlimpial.Location = new System.Drawing.Point(118, 267);
+            this.btnlimpial.Name = "btnlimpial";
+            this.btnlimpial.Size = new System.Drawing.Size(42, 43);
+            this.btnlimpial.TabIndex = 16;
+            this.btnlimpial.UseVisualStyleBackColor = true;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -166,6 +199,15 @@
             this.label4.Size = new System.Drawing.Size(89, 21);
             this.label4.TabIndex = 3;
             this.label4.Text = "TELEFONO:";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(351, 73);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(129, 127);
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
             // 
             // txtnombrep
             // 
@@ -202,78 +244,6 @@
             this.groupBox3.Size = new System.Drawing.Size(207, 431);
             this.groupBox3.TabIndex = 20;
             this.groupBox3.TabStop = false;
-            // 
-            // logo
-            // 
-            this.logo.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.logo.BackColor = System.Drawing.Color.LimeGreen;
-            this.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.logo.Controls.Add(this.pictureBox1);
-            this.logo.Controls.Add(this.label1);
-            this.logo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.logo.Location = new System.Drawing.Point(3, 16);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(201, 51);
-            this.logo.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(45, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Participante ";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Indigo;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 58);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1104, 16);
-            this.panel2.TabIndex = 6;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.Control;
-            this.panel4.Controls.Add(this.groupBox1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(207, 74);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(515, 431);
-            this.panel4.TabIndex = 21;
-            // 
-            // btnguardarp
-            // 
-            this.btnguardarp.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnguardarp.Image = ((System.Drawing.Image)(resources.GetObject("btnguardarp.Image")));
-            this.btnguardarp.Location = new System.Drawing.Point(55, 267);
-            this.btnguardarp.Name = "btnguardarp";
-            this.btnguardarp.Size = new System.Drawing.Size(42, 43);
-            this.btnguardarp.TabIndex = 15;
-            this.btnguardarp.UseVisualStyleBackColor = false;
-            this.btnguardarp.Click += new System.EventHandler(this.btnguardarp_Click);
-            // 
-            // btnlimpial
-            // 
-            this.btnlimpial.Image = ((System.Drawing.Image)(resources.GetObject("btnlimpial.Image")));
-            this.btnlimpial.Location = new System.Drawing.Point(118, 267);
-            this.btnlimpial.Name = "btnlimpial";
-            this.btnlimpial.Size = new System.Drawing.Size(42, 43);
-            this.btnlimpial.TabIndex = 16;
-            this.btnlimpial.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(351, 73);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(129, 127);
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
             // 
             // button3
             // 
@@ -337,6 +307,19 @@
             this.button1.Text = "Consulta de Calificaciones     ";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // logo
+            // 
+            this.logo.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.logo.BackColor = System.Drawing.Color.LimeGreen;
+            this.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.logo.Controls.Add(this.pictureBox1);
+            this.logo.Controls.Add(this.label1);
+            this.logo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.logo.Location = new System.Drawing.Point(3, 16);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(201, 51);
+            this.logo.TabIndex = 4;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::notas.Properties.Resources.man_user__1_;
@@ -346,20 +329,35 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // btnbuscarp
+            // label1
             // 
-            this.btnbuscarp.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnbuscarp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnbuscarp.Image = ((System.Drawing.Image)(resources.GetObject("btnbuscarp.Image")));
-            this.btnbuscarp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnbuscarp.Location = new System.Drawing.Point(6, 38);
-            this.btnbuscarp.Name = "btnbuscarp";
-            this.btnbuscarp.Size = new System.Drawing.Size(61, 36);
-            this.btnbuscarp.TabIndex = 1;
-            this.btnbuscarp.Text = "Buscar";
-            this.btnbuscarp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbuscarp.UseVisualStyleBackColor = false;
-            this.btnbuscarp.Click += new System.EventHandler(this.btnbuscarp_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(45, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Participante ";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Indigo;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 58);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1104, 16);
+            this.panel2.TabIndex = 6;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.Control;
+            this.panel4.Controls.Add(this.groupBox1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(207, 74);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(515, 431);
+            this.panel4.TabIndex = 21;
             // 
             // panel1
             // 
@@ -416,15 +414,6 @@
             this.btnatras.UseVisualStyleBackColor = true;
             this.btnatras.Click += new System.EventHandler(this.btnatras_Click);
             // 
-            // btndel
-            // 
-            this.btndel.Location = new System.Drawing.Point(32, 307);
-            this.btndel.Name = "btndel";
-            this.btndel.Size = new System.Drawing.Size(75, 23);
-            this.btndel.TabIndex = 9;
-            this.btndel.Text = "Eliminar";
-            this.btndel.UseVisualStyleBackColor = true;
-            // 
             // profesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -444,12 +433,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgdatosp)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.logo.ResumeLayout(false);
             this.logo.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -488,6 +477,5 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btndel;
     }
 }
