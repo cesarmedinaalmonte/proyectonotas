@@ -55,10 +55,17 @@ namespace notas
                 {
                     DataTable dt = obCRUD.ConsultaConResultado("SELECT TOP(1)  * FROM asignatura ORDER BY idasignatura DESC;");
                     String idasignatura = dt.Rows[0][0].ToString();
-
-                    if (obCRUD.ConsultaSinResultado("INSERT INTO prerequisito(clave,idasignatura) VALUES('" + txtprereq.Text + "','" + idasignatura + "')"))
+                    
+                    //Condicion que verificar si el primer campo de prerequisito está vacio
+                    if (string.IsNullOrWhiteSpace(txtprereq.Text))
                     {
-                        //Este if verifica si el campo prerequisito2 está vacio
+                        MessageBox.Show("Campo Obligatorio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
+                    // Esta condicion es la que guarda el primer requisito de la asignatura
+                    else if (obCRUD.ConsultaSinResultado("INSERT INTO prerequisito(clave,idasignatura) VALUES('" + txtprereq.Text + "','" + idasignatura + "')"))
+                    {
+                        //Este if verifica si el campo prerequisito2 está vacio o tiene espacio en blanco 
                         if (!string.IsNullOrWhiteSpace(txtprereq2.Text))
                         {
                             obCRUD.ConsultaSinResultado("INSERT INTO prerequisito(clave,idasignatura) VALUES('" + txtprereq2.Text + "','" + idasignatura + "')");
@@ -123,6 +130,7 @@ namespace notas
 
         private void dtgdatos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //DataTable dt = obCRUD.ConsultaConResultado("SELECT * FORM prerequisito WHERE idasignatura = '"+ +"'");
             poc =dtgdatos.CurrentRow.Index;
 
             txtclave.Text = dtgdatos.CurrentRow.Cells[0].Value.ToString();
@@ -143,6 +151,11 @@ namespace notas
             txtprereq.Text = "";
             txtprereq2.Text = "";
       
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
