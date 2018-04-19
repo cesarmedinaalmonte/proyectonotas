@@ -34,14 +34,11 @@
             this.button4 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgsiglo1 = new System.Windows.Forms.DataGridView();
-            this.dtgsiglo2 = new System.Windows.Forms.DataGridView();
-            this.dtgsiglo3 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnhistorial = new System.Windows.Forms.Button();
+            this.cmbhistorial = new System.Windows.Forms.ComboBox();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgsiglo1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgsiglo2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgsiglo3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel5
@@ -91,53 +88,44 @@
             this.dtgsiglo1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgsiglo1.Location = new System.Drawing.Point(115, 173);
             this.dtgsiglo1.Name = "dtgsiglo1";
-            this.dtgsiglo1.Size = new System.Drawing.Size(422, 150);
+            this.dtgsiglo1.Size = new System.Drawing.Size(572, 268);
             this.dtgsiglo1.TabIndex = 33;
             // 
-            // dtgsiglo2
+            // btnhistorial
             // 
-            this.dtgsiglo2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgsiglo2.Location = new System.Drawing.Point(115, 357);
-            this.dtgsiglo2.Name = "dtgsiglo2";
-            this.dtgsiglo2.Size = new System.Drawing.Size(422, 150);
-            this.dtgsiglo2.TabIndex = 34;
+            this.btnhistorial.AccessibleDescription = "al";
+            this.btnhistorial.Location = new System.Drawing.Point(115, 132);
+            this.btnhistorial.Name = "btnhistorial";
+            this.btnhistorial.Size = new System.Drawing.Size(75, 23);
+            this.btnhistorial.TabIndex = 36;
+            this.btnhistorial.Text = "Buscar";
+            this.btnhistorial.UseVisualStyleBackColor = true;
+            this.btnhistorial.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dtgsiglo3
+            // cmbhistorial
             // 
-            this.dtgsiglo3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgsiglo3.Location = new System.Drawing.Point(115, 523);
-            this.dtgsiglo3.Name = "dtgsiglo3";
-            this.dtgsiglo3.Size = new System.Drawing.Size(422, 150);
-            this.dtgsiglo3.TabIndex = 35;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(579, 149);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.cmbhistorial.FormattingEnabled = true;
+            this.cmbhistorial.Location = new System.Drawing.Point(213, 134);
+            this.cmbhistorial.Name = "cmbhistorial";
+            this.cmbhistorial.Size = new System.Drawing.Size(121, 21);
+            this.cmbhistorial.TabIndex = 37;
             // 
             // historial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1104, 730);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dtgsiglo3);
-            this.Controls.Add(this.dtgsiglo2);
+            this.Controls.Add(this.cmbhistorial);
+            this.Controls.Add(this.btnhistorial);
             this.Controls.Add(this.dtgsiglo1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel5);
             this.Name = "historial";
             this.Text = "historial";
+            this.Load += new System.EventHandler(this.historial_Load);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgsiglo1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgsiglo2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgsiglo3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -149,8 +137,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dtgsiglo1;
-        private System.Windows.Forms.DataGridView dtgsiglo2;
-        private System.Windows.Forms.DataGridView dtgsiglo3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnhistorial;
+        private System.Windows.Forms.ComboBox cmbhistorial;
     }
 }

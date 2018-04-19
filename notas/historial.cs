@@ -26,5 +26,13 @@ namespace notas
             dtgsiglo1.DataSource = dt;
             dtgsiglo1.Refresh();
         }
+
+        private void historial_Load(object sender, EventArgs e)
+        {
+            //Codigo para llegar el combobox con la tabla cuatrimestre
+            cmbhistorial.DataSource = obCRUD.ConsultaConResultado("SELECT * FROM periodo");
+            cmbhistorial.DisplayMember = "ano";
+            cmbhistorial.ValueMember = "idperiodo";
+        }
     }
 }
