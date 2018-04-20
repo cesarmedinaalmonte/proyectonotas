@@ -57,11 +57,11 @@
     <Compile Include="conexion1.cs" />
     <Compile Include="datosbasedt.cs" />
     <Compile Include="datosget.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="historial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="historial.Designer.cs">
+      <DependentUpon>historial.cs</DependentUpon>
     </Compile>
     <Compile Include="inicio.cs">
       <SubType>Form</SubType>
@@ -90,8 +90,8 @@
     <EmbeddedResource Include="Asignatura.resx">
       <DependentUpon>Asignatura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="historial.resx">
+      <DependentUpon>historial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inicio.resx">
       <DependentUpon>inicio.cs</DependentUpon>
