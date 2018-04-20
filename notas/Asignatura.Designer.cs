@@ -60,6 +60,7 @@ namespace notas
             this.panel4 = new System.Windows.Forms.Panel();
             this.buscar = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboxbuscar = new System.Windows.Forms.ComboBox();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.btnbuscar = new System.Windows.Forms.Button();
             this.dtgdatos = new System.Windows.Forms.DataGridView();
@@ -379,6 +380,7 @@ namespace notas
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.comboxbuscar);
             this.groupBox2.Controls.Add(this.txtbuscar);
             this.groupBox2.Controls.Add(this.btnbuscar);
             this.groupBox2.Controls.Add(this.dtgdatos);
@@ -392,9 +394,21 @@ namespace notas
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "BUSCAR ASIGNATURA";
             // 
+            // comboxbuscar
+            // 
+            this.comboxbuscar.FormattingEnabled = true;
+            this.comboxbuscar.Items.AddRange(new object[] {
+            "Nombre",
+            "Clave"});
+            this.comboxbuscar.Location = new System.Drawing.Point(107, 57);
+            this.comboxbuscar.Name = "comboxbuscar";
+            this.comboxbuscar.Size = new System.Drawing.Size(92, 24);
+            this.comboxbuscar.TabIndex = 9;
+            this.comboxbuscar.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // txtbuscar
             // 
-            this.txtbuscar.Location = new System.Drawing.Point(120, 52);
+            this.txtbuscar.Location = new System.Drawing.Point(211, 53);
             this.txtbuscar.Margin = new System.Windows.Forms.Padding(4);
             this.txtbuscar.Multiline = true;
             this.txtbuscar.Name = "txtbuscar";
@@ -719,5 +733,6 @@ namespace notas
         private System.Windows.Forms.Panel logo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboxbuscar;
     }
 }

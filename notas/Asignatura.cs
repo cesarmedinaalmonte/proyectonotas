@@ -84,10 +84,23 @@ namespace notas
         
         private void button4_Click(object sender, EventArgs e)
         {
-            
-            DataTable dt =  obCRUD.ConsultaConResultado("SELECT clave, nombre_asignatura,ht,hp,cr FROM asignatura ;");
-            dtgdatos.DataSource = dt;
-            dtgdatos.Refresh();
+            DataTable dt;
+            if (string.IsNullOrEmpty(txtbuscar.Text))
+            {
+                dt= obCRUD.ConsultaConResultado("SELECT clave, nombre_asignatura,ht,hp,cr FROM asignatura");
+
+                dtgdatos.DataSource = dt;
+                dtgdatos.Refresh();
+            }
+            else if (comboxbuscar.SelectedText == "Nombre")
+            {
+                dt = obCRUD.ConsultaConResultado("SELECT clave, nombre_asignatura,ht,hp,cr FROM asignatura WHERE nombre_asignatura like '%" + txtbuscar.Text + "%';");
+                dtgdatos.DataSource = dt;
+                dtgdatos.Refresh();
+
+
+            }
+
 
         }
 
@@ -162,6 +175,11 @@ namespace notas
                         MessageBox.Show(" No se pudo eliminar la asignatura  ", "Error al eliminar ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
