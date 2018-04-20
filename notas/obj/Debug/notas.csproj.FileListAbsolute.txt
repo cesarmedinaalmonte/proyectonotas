@@ -14,7 +14,9 @@ C:\Users\gregory\source\repos\notas\notas\obj\Debug\notas.profesor.resources
 C:\Users\prueba\source\repos\notas\notas\bin\Debug\notas.exe.config
 C:\Users\prueba\source\repos\notas\notas\bin\Debug\notas.exe
 C:\Users\prueba\source\repos\notas\notas\bin\Debug\notas.pdb
+C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.csprojResolveAssemblyReference.cache
 C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.Asignatura.resources
+C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.Form1.resources
 C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.inicio.resources
 C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.profesor.resources
 C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.Properties.Resources.resources
@@ -35,10 +37,4 @@ C:\Users\gregory\Documents\GitHub\proyectonotas\notas\bin\Debug\notas.exe.config
 C:\Users\gregory\Documents\GitHub\proyectonotas\notas\bin\Debug\notas.exe
 C:\Users\gregory\Documents\GitHub\proyectonotas\notas\bin\Debug\notas.pdb
 C:\Users\gregory\Documents\GitHub\proyectonotas\notas\obj\Debug\notas.historial.resources
-<<<<<<< HEAD
 C:\Users\gregory\Documents\GitHub\proyectonotas\notas\obj\Debug\notas.Calificaciones.resources
-=======
-C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.seleccion.periodo.resources
-C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.asignacion.resources
-C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.csprojResolveAssemblyReference.cache
->>>>>>> 5d2559777b0bd6a3ce45527c102acfc006fed00c
