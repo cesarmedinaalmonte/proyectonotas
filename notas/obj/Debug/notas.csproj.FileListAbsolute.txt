@@ -16,7 +16,6 @@ C:\Users\prueba\source\repos\notas\notas\bin\Debug\notas.exe
 C:\Users\prueba\source\repos\notas\notas\bin\Debug\notas.pdb
 C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.csprojResolveAssemblyReference.cache
 C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.Asignatura.resources
-C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.Form1.resources
 C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.inicio.resources
 C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.profesor.resources
 C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.Properties.Resources.resources
