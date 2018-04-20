@@ -57,12 +57,6 @@
     <Compile Include="conexion1.cs" />
     <Compile Include="datosbasedt.cs" />
     <Compile Include="datosget.cs" />
-    <Compile Include="historial.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="historial.Designer.cs">
-      <DependentUpon>historial.cs</DependentUpon>
-    </Compile>
     <Compile Include="inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,9 +83,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Asignatura.resx">
       <DependentUpon>Asignatura.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="historial.resx">
-      <DependentUpon>historial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inicio.resx">
       <DependentUpon>inicio.cs</DependentUpon>
