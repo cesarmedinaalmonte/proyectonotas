@@ -63,12 +63,6 @@
     <Compile Include="conexion1.cs" />
     <Compile Include="datosbasedt.cs" />
     <Compile Include="datosget.cs" />
-    <Compile Include="historial.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="historial.Designer.cs">
-      <DependentUpon>historial.cs</DependentUpon>
-    </Compile>
     <Compile Include="inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,15 +87,31 @@
     </Compile>
     <Compile Include="Resources\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="seleccion\asignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seleccion\asignacion.Designer.cs">
+      <DependentUpon>asignacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="seleccion\objperiodo.cs" />
+    <Compile Include="seleccion\periodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="seleccion\periodo.Designer.cs">
+      <DependentUpon>periodo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Asignatura.resx">
       <DependentUpon>Asignatura.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Calificaciones.resx">
       <DependentUpon>Calificaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="historial.resx">
       <DependentUpon>historial.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> 5d2559777b0bd6a3ce45527c102acfc006fed00c
     <EmbeddedResource Include="inicio.resx">
       <DependentUpon>inicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +128,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="seleccion\asignacion.resx">
+      <DependentUpon>asignacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="seleccion\periodo.resx">
+      <DependentUpon>periodo.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="pensumDataSet.xsc">
       <DependentUpon>pensumDataSet.xsd</DependentUpon>
     </None>

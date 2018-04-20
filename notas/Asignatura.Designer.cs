@@ -34,12 +34,15 @@ namespace notas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Asignatura));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cuatrimestreBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pensumDataSet1 = new notas.pensumDataSet1();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnactualizar = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.ComboxCuatrimestre = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtprereq2 = new System.Windows.Forms.TextBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnguardar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
@@ -55,11 +58,9 @@ namespace notas
             this.txthp = new System.Windows.Forms.TextBox();
             this.txtasig = new System.Windows.Forms.TextBox();
             this.txtht = new System.Windows.Forms.TextBox();
-            this.cuatrimestreBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pensumDataSet1 = new notas.pensumDataSet1();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.buscar = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboxbuscar = new System.Windows.Forms.ComboBox();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.btnbuscar = new System.Windows.Forms.Button();
             this.dtgdatos = new System.Windows.Forms.DataGridView();
@@ -78,11 +79,11 @@ namespace notas
             this.panel6 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.btnatras = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuatrimestreBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pensumDataSet1)).BeginInit();
             this.panel4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.buscar.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgdatos)).BeginInit();
@@ -116,13 +117,33 @@ namespace notas
             this.panel3.Size = new System.Drawing.Size(1472, 36);
             this.panel3.TabIndex = 7;
             // 
+            // cuatrimestreBindingSource
+            // 
+            this.cuatrimestreBindingSource.DataMember = "cuatrimestre";
+            this.cuatrimestreBindingSource.DataSource = this.pensumDataSet1;
+            // 
+            // pensumDataSet1
+            // 
+            this.pensumDataSet1.DataSetName = "pensumDataSet1";
+            this.pensumDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.groupBox1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(251, 90);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(639, 772);
+            this.panel4.TabIndex = 19;
+            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnactualizar);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.ComboxCuatrimestre);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtprereq2);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnguardar);
             this.groupBox1.Controls.Add(this.btneliminar);
@@ -144,16 +165,38 @@ namespace notas
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(665, 772);
+            this.groupBox1.Size = new System.Drawing.Size(630, 772);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "REGISTRO DE ASIGNATURAS";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // btnactualizar
+            // 
+            this.btnactualizar.Location = new System.Drawing.Point(256, 501);
+            this.btnactualizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnactualizar.Name = "btnactualizar";
+            this.btnactualizar.Size = new System.Drawing.Size(56, 53);
+            this.btnactualizar.TabIndex = 25;
+            this.btnactualizar.UseVisualStyleBackColor = true;
+            this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(11, 429);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(162, 26);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "PREREQUISITO 2:";
+            this.label9.Click += new System.EventHandler(this.label9_Click_1);
+            // 
             // ComboxCuatrimestre
             // 
             this.ComboxCuatrimestre.FormattingEnabled = true;
-            this.ComboxCuatrimestre.Location = new System.Drawing.Point(173, 327);
+            this.ComboxCuatrimestre.Location = new System.Drawing.Point(178, 328);
             this.ComboxCuatrimestre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ComboxCuatrimestre.Name = "ComboxCuatrimestre";
             this.ComboxCuatrimestre.Size = new System.Drawing.Size(252, 30);
@@ -173,31 +216,11 @@ namespace notas
             // 
             // txtprereq2
             // 
-            this.txtprereq2.Location = new System.Drawing.Point(332, 379);
+            this.txtprereq2.Location = new System.Drawing.Point(178, 428);
             this.txtprereq2.Margin = new System.Windows.Forms.Padding(4);
             this.txtprereq2.Name = "txtprereq2";
             this.txtprereq2.Size = new System.Drawing.Size(93, 29);
             this.txtprereq2.TabIndex = 21;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(304, 390);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(18, 17);
-            this.checkBox2.TabIndex = 20;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(173, 390);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(18, 17);
-            this.checkBox1.TabIndex = 19;
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -224,7 +247,7 @@ namespace notas
             // 
             // btneliminar
             // 
-            this.btneliminar.Location = new System.Drawing.Point(256, 501);
+            this.btneliminar.Location = new System.Drawing.Point(337, 501);
             this.btneliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(56, 53);
@@ -290,7 +313,7 @@ namespace notas
             // 
             // txtprereq
             // 
-            this.txtprereq.Location = new System.Drawing.Point(201, 379);
+            this.txtprereq.Location = new System.Drawing.Point(178, 379);
             this.txtprereq.Margin = new System.Windows.Forms.Padding(4);
             this.txtprereq.Name = "txtprereq";
             this.txtprereq.Size = new System.Drawing.Size(93, 29);
@@ -303,13 +326,13 @@ namespace notas
             this.label7.Location = new System.Drawing.Point(8, 382);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(146, 26);
+            this.label7.Size = new System.Drawing.Size(162, 26);
             this.label7.TabIndex = 6;
-            this.label7.Text = "PREREQUISITO:";
+            this.label7.Text = "PREREQUISITO 1:";
             // 
             // txtcr
             // 
-            this.txtcr.Location = new System.Drawing.Point(176, 277);
+            this.txtcr.Location = new System.Drawing.Point(178, 279);
             this.txtcr.Margin = new System.Windows.Forms.Padding(4);
             this.txtcr.Name = "txtcr";
             this.txtcr.Size = new System.Drawing.Size(249, 29);
@@ -317,7 +340,7 @@ namespace notas
             // 
             // txtclave
             // 
-            this.txtclave.Location = new System.Drawing.Point(176, 82);
+            this.txtclave.Location = new System.Drawing.Point(178, 84);
             this.txtclave.Margin = new System.Windows.Forms.Padding(4);
             this.txtclave.Name = "txtclave";
             this.txtclave.Size = new System.Drawing.Size(249, 29);
@@ -325,7 +348,7 @@ namespace notas
             // 
             // txthp
             // 
-            this.txthp.Location = new System.Drawing.Point(176, 226);
+            this.txthp.Location = new System.Drawing.Point(178, 228);
             this.txthp.Margin = new System.Windows.Forms.Padding(4);
             this.txthp.Name = "txthp";
             this.txthp.Size = new System.Drawing.Size(249, 29);
@@ -333,7 +356,7 @@ namespace notas
             // 
             // txtasig
             // 
-            this.txtasig.Location = new System.Drawing.Point(176, 128);
+            this.txtasig.Location = new System.Drawing.Point(178, 132);
             this.txtasig.Margin = new System.Windows.Forms.Padding(4);
             this.txtasig.Name = "txtasig";
             this.txtasig.Size = new System.Drawing.Size(249, 29);
@@ -341,60 +364,53 @@ namespace notas
             // 
             // txtht
             // 
-            this.txtht.Location = new System.Drawing.Point(176, 178);
+            this.txtht.Location = new System.Drawing.Point(178, 183);
             this.txtht.Margin = new System.Windows.Forms.Padding(4);
             this.txtht.Name = "txtht";
             this.txtht.Size = new System.Drawing.Size(249, 29);
             this.txtht.TabIndex = 9;
             // 
-            // cuatrimestreBindingSource
-            // 
-            this.cuatrimestreBindingSource.DataMember = "cuatrimestre";
-            this.cuatrimestreBindingSource.DataSource = this.pensumDataSet1;
-            // 
-            // pensumDataSet1
-            // 
-            this.pensumDataSet1.DataSetName = "pensumDataSet1";
-            this.pensumDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.groupBox1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(251, 90);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(669, 772);
-            this.panel4.TabIndex = 19;
-            // 
             // buscar
             // 
             this.buscar.Controls.Add(this.groupBox2);
             this.buscar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buscar.Location = new System.Drawing.Point(996, 90);
+            this.buscar.Location = new System.Drawing.Point(949, 90);
             this.buscar.Margin = new System.Windows.Forms.Padding(4);
             this.buscar.Name = "buscar";
-            this.buscar.Size = new System.Drawing.Size(476, 772);
+            this.buscar.Size = new System.Drawing.Size(523, 772);
             this.buscar.TabIndex = 20;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.comboxbuscar);
             this.groupBox2.Controls.Add(this.txtbuscar);
             this.groupBox2.Controls.Add(this.btnbuscar);
             this.groupBox2.Controls.Add(this.dtgdatos);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox2.Location = new System.Drawing.Point(1, 0);
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(475, 772);
+            this.groupBox2.Size = new System.Drawing.Size(523, 772);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "BUSCAR ASIGNATURA";
             // 
+            // comboxbuscar
+            // 
+            this.comboxbuscar.FormattingEnabled = true;
+            this.comboxbuscar.Items.AddRange(new object[] {
+            "Nombre",
+            "Clave"});
+            this.comboxbuscar.Location = new System.Drawing.Point(107, 57);
+            this.comboxbuscar.Name = "comboxbuscar";
+            this.comboxbuscar.Size = new System.Drawing.Size(92, 24);
+            this.comboxbuscar.TabIndex = 9;
+            this.comboxbuscar.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // txtbuscar
             // 
-            this.txtbuscar.Location = new System.Drawing.Point(120, 52);
+            this.txtbuscar.Location = new System.Drawing.Point(211, 53);
             this.txtbuscar.Margin = new System.Windows.Forms.Padding(4);
             this.txtbuscar.Multiline = true;
             this.txtbuscar.Name = "txtbuscar";
@@ -428,6 +444,7 @@ namespace notas
             this.dtgdatos.Size = new System.Drawing.Size(459, 238);
             this.dtgdatos.TabIndex = 0;
             this.dtgdatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgdatos_CellClick);
+            this.dtgdatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgdatos_CellContentClick_1);
             // 
             // pensumDataSet
             // 
@@ -638,12 +655,12 @@ namespace notas
             this.Text = "Asignatura";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Asignatura_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuatrimestreBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pensumDataSet1)).EndInit();
             this.panel4.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.buscar.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -676,26 +693,6 @@ namespace notas
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtprereq2;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnguardar;
-        private System.Windows.Forms.Button btneliminar;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtprereq;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtcr;
-        private System.Windows.Forms.TextBox txtclave;
-        private System.Windows.Forms.TextBox txthp;
-        private System.Windows.Forms.TextBox txtasig;
-        private System.Windows.Forms.TextBox txtht;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel buscar;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -703,7 +700,6 @@ namespace notas
         private System.Windows.Forms.TextBox txtbuscar;
         private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.Button btnatras;
-        private System.Windows.Forms.ComboBox ComboxCuatrimestre;
         private System.Windows.Forms.BindingSource pensumDataSetBindingSource;
         private pensumDataSet pensumDataSet;
         private pensumDataSet1 pensumDataSet1;
@@ -719,5 +715,27 @@ namespace notas
         private System.Windows.Forms.Panel logo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboxbuscar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnactualizar;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox ComboxCuatrimestre;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtprereq2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnguardar;
+        private System.Windows.Forms.Button btneliminar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtprereq;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtcr;
+        private System.Windows.Forms.TextBox txtclave;
+        private System.Windows.Forms.TextBox txthp;
+        private System.Windows.Forms.TextBox txtasig;
+        private System.Windows.Forms.TextBox txtht;
     }
 }
