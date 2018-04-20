@@ -38,21 +38,14 @@ namespace notas
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 18584b9cc6aa4d5c36099eb4dbfeb7757ed822b5
             //El siguiente if es para verificar si los campos de la asignaturas estan vacios
             if (string.IsNullOrWhiteSpace(txtclave.Text) || string.IsNullOrWhiteSpace(txtasig.Text) || string.IsNullOrWhiteSpace(txtht.Text) || string.IsNullOrWhiteSpace(txthp.Text) || string.IsNullOrWhiteSpace(txtcr.Text) || string.IsNullOrWhiteSpace(txtprereq.Text))
             {
                 MessageBox.Show("No dejar en blanco los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
-<<<<<<< HEAD
 
-=======
->>>>>>> 18584b9cc6aa4d5c36099eb4dbfeb7757ed822b5
             {
                 DataTable dt1 = obCRUD.ConsultaConResultado("SELECT * FROM asignatura WHERE clave='" + txtclave.Text + "'");//crear una datatable para guardar el resultado de la consulta para despues validar
                 if (dt1.Rows.Count != 0)//condicion para validar si la asignatura ya existe en la base de datos mostrar el siguiente mensaje
@@ -94,19 +87,27 @@ namespace notas
         private void button4_Click(object sender, EventArgs e)
         {
             DataTable dt;
-            if (string.IsNullOrEmpty(txtbuscar.Text))
+            if (string.IsNullOrEmpty(txtbuscar.Text) && string.IsNullOrEmpty(comboxbuscar.Text))
             {
                 dt= obCRUD.ConsultaConResultado("SELECT clave, nombre_asignatura,ht,hp,cr FROM asignatura");
-
+                
                 dtgdatos.DataSource = dt;
                 dtgdatos.Refresh();
             }
-            else if (comboxbuscar.SelectedText == "Nombre")
+            if (comboxbuscar.Text == "Nombre")
             {
                 dt = obCRUD.ConsultaConResultado("SELECT clave, nombre_asignatura,ht,hp,cr FROM asignatura WHERE nombre_asignatura like '%" + txtbuscar.Text + "%';");
                 dtgdatos.DataSource = dt;
                 dtgdatos.Refresh();
 
+
+            }
+            if (comboxbuscar.Text == "Clave")
+            {
+                dt = obCRUD.ConsultaConResultado("SELECT clave, nombre_asignatura,ht,hp,cr FROM asignatura WHERE clave like '%" + txtbuscar.Text + "%';");
+                dtgdatos.DataSource = dt;
+                dtgdatos.Refresh();
+               
 
             }
 
@@ -187,6 +188,11 @@ namespace notas
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click_1(object sender, EventArgs e)
         {
 
         }
