@@ -37,3 +37,4 @@ C:\Users\gregory\Documents\GitHub\proyectonotas\notas\bin\Debug\notas.exe.config
 C:\Users\gregory\Documents\GitHub\proyectonotas\notas\bin\Debug\notas.exe
 C:\Users\gregory\Documents\GitHub\proyectonotas\notas\bin\Debug\notas.pdb
 C:\Users\gregory\Documents\GitHub\proyectonotas\notas\obj\Debug\notas.historial.resources
+C:\Users\gregory\Documents\GitHub\proyectonotas\notas\obj\Debug\notas.Calificaciones.resources

@@ -63,5 +63,14 @@ namespace notas
             formp.Visible = true;
             Visible = false;
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form formp = new Calificaciones();
+            formp.Show();
+
+            formp.Visible = true;
+            Visible = false;
+        }
     }
 }
