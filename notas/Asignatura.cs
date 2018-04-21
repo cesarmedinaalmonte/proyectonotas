@@ -29,6 +29,7 @@ namespace notas
             ComboxCuatrimestre.DataSource = obCRUD.ConsultaConResultado("SELECT * FROM cuatrimestre");
             ComboxCuatrimestre.DisplayMember = "nombrecuatrimestre";
             ComboxCuatrimestre.ValueMember = "idcuatrimestre";
+            dtgdatos.AllowUserToAddRows = false;
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -151,12 +152,21 @@ namespace notas
         {
             //DataTable dt = obCRUD.ConsultaConResultado("SELECT * FORM prerequisito WHERE idasignatura = '"+ +"'");
             poc =dtgdatos.CurrentRow.Index;
-
+            limpiar();//limpiar los campos cada vez que se haga una seleción 
+            DataTable dt1 = obCRUD.ConsultaConResultado("SELECT * FROM asignatura WHERE clave='" + dtgdatos.CurrentRow.Cells[0].Value.ToString() + "'");
+            DataTable dt2 = obCRUD.ConsultaConResultado("SELECT * FROM prerequisito WHERE idasignatura='" +dt1.Rows[0][0] + "'");
+            ComboxCuatrimestre.SelectedValue = dt1.Rows[0][6];
             txtclave.Text = dtgdatos.CurrentRow.Cells[0].Value.ToString();
             txtasig.Text = dtgdatos.CurrentRow.Cells[1].Value.ToString();
             txtht.Text = dtgdatos.CurrentRow.Cells[2].Value.ToString();
             txthp.Text = dtgdatos.CurrentRow.Cells[3].Value.ToString();
             txtcr.Text = dtgdatos.CurrentRow.Cells[4].Value.ToString();
+            txtprereq.Text = dt2.Rows[0][1].ToString();
+            if (dt2.Rows.Count > 1)
+            {
+                txtprereq2.Text = dt2.Rows[1][1].ToString();
+            }
+            
             //txtcuatrimestre.Text = dtgdatos.CurrentRow.Cells[5].Value.ToString();
             
         }
@@ -195,6 +205,42 @@ namespace notas
         private void label9_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void dtgdatos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnactualizar_Click(object sender, EventArgs e)
+        {
+            DataTable dt = obCRUD.ConsultaConResultado("SELECT idasignatura FROM asignatura WHERE clave = '" + txtclave.Text + "'");
+            int idasignatura = Convert.ToInt32(dt.Rows[0][0]);
+            DataTable dt1 = obCRUD.ConsultaConResultado("SELECT idprerequisito FROM prerequisito WHERE idasignatura = '"+idasignatura +"'");
+            int idprerequisito = Convert.ToInt32(dt1.Rows[0][0]);
+           int idprere = Convert.ToInt32(dt1.Rows[1][0]);
+
+
+            if (obCRUD.ConsultaSinResultado("UPDATE asignatura SET  nombre_asignatura = '" + txtasig.Text + "', ht= '" + txtht.Text + "',hp= '" + txthp.Text + "',cr= '" + txtcr.Text + "',idcuatrimestre='" + ComboxCuatrimestre.SelectedValue + "' WHERE idasignatura = '"+idasignatura+"'"))
+            {
+                obCRUD.ConsultaSinResultado("UPDATE prerequisito SET clave = '"+ txtprereq.Text +"' WHERE idprerequisito = '"+idprerequisito+"'");
+                
+                if (!string.IsNullOrEmpty(txtprereq2.Text) && idprere != 0 )
+                {
+                    obCRUD.ConsultaSinResultado("UPDATE prerequisito SET clave = '" + txtprereq.Text + "' WHERE idprerequisito = '" + idprere+ "'");
+
+
+                }
+                MessageBox.Show("Asignatura Actualizada", "Actualizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                limpiar();
+
+            }
+            else
+            {
+
+                MessageBox.Show(" No se pudo Actualizar la asignatura  ", "Error al Actualizar ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
         }
     }
 }

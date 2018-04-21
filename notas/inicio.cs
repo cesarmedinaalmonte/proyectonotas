@@ -1,4 +1,5 @@
-﻿using System;
+﻿using notas.seleccion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -62,6 +63,24 @@ namespace notas
 
             //formp.Visible = true;
             //Visible = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form formp = new periodo();
+            formp.Show();
+
+            formp.Visible = true;
+            Visible = false;
+        }
+
+        private void btnSeleccionAsignatura_Click(object sender, EventArgs e)
+        {
+            Form formp = new asignacion();
+            formp.Show();
+
+            formp.Visible = true;
+            Visible = false;
         }
     }
 }
