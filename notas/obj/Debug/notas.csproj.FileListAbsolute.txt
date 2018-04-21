@@ -38,3 +38,4 @@ C:\Users\gregory\Documents\GitHub\proyectonotas\notas\obj\Debug\notas.historial.
 C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.seleccion.periodo.resources
 C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.asignacion.resources
 C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.csprojResolveAssemblyReference.cache
+C:\Users\prueba\source\repos\notas\notas\obj\Debug\notas.calificacion.resources

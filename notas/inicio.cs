@@ -48,7 +48,11 @@ namespace notas
 
         private void button8_Click(object sender, EventArgs e)
         {
+            Form formp = new calificacion();
+            formp.Show();
 
+            formp.Visible = true;
+            Visible = false;
         }
 
         private void btnatras_Click(object sender, EventArgs e)
