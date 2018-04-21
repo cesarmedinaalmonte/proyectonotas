@@ -1,4 +1,5 @@
-﻿using System;
+﻿using notas.seleccion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -61,16 +62,25 @@ namespace notas
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form formp = new historial();
+            //Form formp = new historial();
+            //formp.Show();
+
+            //formp.Visible = true;
+            //Visible = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form formp = new periodo();
             formp.Show();
 
             formp.Visible = true;
             Visible = false;
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnSeleccionAsignatura_Click(object sender, EventArgs e)
         {
-            Form formp = new Calificaciones();
+            Form formp = new asignacion();
             formp.Show();
 
             formp.Visible = true;
