@@ -52,17 +52,31 @@
     <Compile Include="Asignatura.Designer.cs">
       <DependentUpon>Asignatura.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="calificacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="calificacion.Designer.cs">
       <DependentUpon>calificacion.cs</DependentUpon>
+=======
+    <Compile Include="Calificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calificaciones.Designer.cs">
+      <DependentUpon>Calificaciones.cs</DependentUpon>
+>>>>>>> 1017fc9e6ab246f6dcac143f6f75d57068e9858b
     </Compile>
     <Compile Include="CRUD.cs" />
     <Compile Include="conexion.cs" />
     <Compile Include="conexion1.cs" />
     <Compile Include="datosbasedt.cs" />
     <Compile Include="datosget.cs" />
+    <Compile Include="historial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="historial.Designer.cs">
+      <DependentUpon>historial.cs</DependentUpon>
+    </Compile>
     <Compile Include="inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,24 +101,19 @@
     </Compile>
     <Compile Include="Resources\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="seleccion\asignacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="seleccion\asignacion.Designer.cs">
-      <DependentUpon>asignacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="seleccion\objperiodo.cs" />
-    <Compile Include="seleccion\periodo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="seleccion\periodo.Designer.cs">
-      <DependentUpon>periodo.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Asignatura.resx">
       <DependentUpon>Asignatura.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="calificacion.resx">
       <DependentUpon>calificacion.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Calificaciones.resx">
+      <DependentUpon>Calificaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="historial.resx">
+      <DependentUpon>historial.cs</DependentUpon>
+>>>>>>> 1017fc9e6ab246f6dcac143f6f75d57068e9858b
     </EmbeddedResource>
     <EmbeddedResource Include="inicio.resx">
       <DependentUpon>inicio.cs</DependentUpon>
@@ -122,12 +131,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="seleccion\asignacion.resx">
-      <DependentUpon>asignacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="seleccion\periodo.resx">
-      <DependentUpon>periodo.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="pensumDataSet.xsc">
       <DependentUpon>pensumDataSet.xsd</DependentUpon>
     </None>
@@ -210,6 +213,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\guardar-archivo-opcion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\periodico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lup.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
